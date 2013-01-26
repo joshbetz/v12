@@ -27,6 +27,17 @@ body {
 	clear: both;
 }
 
+.single {
+	.col-1-3,
+	.col-2-3 {
+		width: 100%;
+	}
+	@include breakpoint(large) {
+		.col-1-3 { @extend .col-1-3 }
+		.col-2-3 { @extend .col-2-3 }
+	}
+}
+
 .node {
 	background: $bg2;
 	padding: $padding;

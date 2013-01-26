@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-<section id="main" class="col-1">
+<section id="content" class="col-1">
 
 	<?php while ( have_posts() ) : the_post(); ?>
 

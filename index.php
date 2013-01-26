@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-<section id="main" class="col-2-3">
+<section id="content" class="col-2-3">
 
 	<?php if ( have_posts() ) : ?>
 
