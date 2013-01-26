@@ -1,0 +1,86 @@
+.article-content, .comment-content, aside {
+	overflow: hidden;
+
+	ul, ol, dd {
+		margin-left: $padding*2;
+	}
+
+	p, ul, ol, pre, blockquote, div, iframe, address {
+		margin-bottom: $padding*2;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	blockquote {
+		padding: 0 $padding;
+		margin-left: $padding;
+		border-left: solid 2px $accent;
+		blockquote { margin-top: $padding; }
+	}
+
+	img {
+		max-width: 100%;
+		height: auto !important;
+	}
+}
+
+.article-content, .comment-content {
+	margin-top: $padding*2;
+	line-height: 1.4em;
+}
+
+hr {
+	border: 0;
+	border-top: solid 1px $description;
+}
+
+pre {
+	overflow-x: scroll;
+	padding-right: 10px;
+}
+
+blockquote cite {
+	display: block;
+	margin-top: 1em;
+}
+
+blockquote cite:before {
+	content: "\2014";
+	margin-right: .2em;
+}
+
+.footnotes {
+	p { margin-bottom: $padding; }
+	ol { margin-top: $padding; }
+}
+
+.format-quote, .format-status {
+	.post-meta {
+		margin-top: $padding*2;
+	}
+	.quote, .status {
+		font-size: 1.6em;
+	}
+}
+
+.fluid-width-video-wrapper {
+	box-shadow: 0 1px 3px rgba(0,0,0,.25);
+	margin-top: $padding*2;
+}
+
+.alignleft {
+	float: left;
+	padding: 0 $padding 0 0;
+}
+.alignright {
+	float: right;
+	padding: 0 0 0 $padding;
+}
+.aligncenter {
+	display: block;
+	margin: 0 auto;
+}
+.alignnone {
+	display: block;
+}

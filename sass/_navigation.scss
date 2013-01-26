@@ -1,0 +1,108 @@
+#main-navigation {
+	&.hidden {
+		@include translate(-260px, 0);
+		box-shadow: none;
+		@include transition(transform 0.5s, box-shadow 0 0.5s);
+	}
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: $darkbg;
+	box-shadow: 0 0 15px rgba(0,0,0,.35);
+	height: 100%;
+	width: 260px;
+	z-index: 10000;
+	overflow: hidden;
+	.menu, li, #searchform {
+		list-style: none;
+		display: block;
+		@include breakpoint(large) {
+			display: inline-block;
+		}
+	}
+	a {
+		display: block;
+		width: 100%;
+		font-size: 1.4em;
+		padding: $padding;
+		background: $bg1;
+	}
+	a:hover {
+		background: $hover;
+	}
+	#searchform {
+		background: $bg1;
+		padding: $padding;
+		box-shadow: 0 7px 7px rgba(0,0,0,.2);
+		@include breakpoint(large) {
+			display: none;
+		}
+	}
+	@include transition(transform 0.5s);
+	@include breakpoint(large) {
+		&.hidden {
+			@include translate(0);
+		}
+		position: absolute;
+		left: auto;
+		right: 20px;
+		background: transparent;
+		box-shadow: none;
+		width: auto;
+		@include transition(none);
+	}
+}
+
+#searchform input {
+	border: 0;
+	display: block;
+	padding: $padding;
+	font-size: 1.4em;
+	width: 100%;
+}
+
+.navicon {
+	position: absolute;
+	top: 28px;
+	right: 50px;
+	@include breakpoint(large) {
+		display: none;
+	}
+}
+.navicon:before {
+	content: "";
+	position: absolute;
+	top: 0.25em;
+	left: 0;
+	width: 2em;
+	height: 0.25em;
+	border-top: 0.75em double $accent;
+	border-bottom: 0.25em solid $accent;
+}
+
+.navicon.hidden:after {
+	content: "";
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	background: rgba(0,0,0,.5);
+}
+
+.navigation {
+	@extend .cf;
+	margin-bottom: $padding;
+}
+.nav-previous {
+	float: left;
+}
+.nav-next {
+	float: right;
+}
+
+.page-links {
+	margin-top: $padding;
+	clear: both;
+}

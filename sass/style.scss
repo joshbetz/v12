@@ -1,0 +1,91 @@
+@import "compass/css3";
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	@include box-sizing(border-box);
+}
+
+$orange: #f47d5d;
+
+$bg1: #f2f2f2;
+$bg2: #fafafa;
+$hover: #ebebeb;
+$accent: #d9d9d9;
+$title: #bfbfbf;
+$body: #595959;
+$description: #cccccc;
+$heading: #999999;
+$darkbg: #404040;
+
+$gutter: 10px;
+$padding: 10px;
+
+@mixin breakpoint($point) {
+	@if $point == mid {
+		@media (min-width: 650px) { @content; }
+	}
+	@else if $point == large {
+		@media (min-width: 800px) { @content; }
+	}
+	@else if $point == huge {
+		@media (min-width: 1170px) { @content; }
+	}
+}
+
+@mixin retina() {
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (   min--moz-device-pixel-ratio: 2),
+	only screen and (     -o-min-device-pixel-ratio: 2/1),
+	only screen and (        min-device-pixel-ratio: 2),
+	only screen and (                min-resolution: 192dpi),
+	only screen and (                min-resolution: 2dppx) { @content; }
+}
+
+@import "main";
+@import "grid";
+
+@import "typography";
+@import "navigation";
+@import "content";
+@import "forms";
+
+@import "comments";
+
+/* Accessibility */
+.assistive-text {
+	position: absolute !important;
+	left: 100% !important;
+	white-space: nowrap !important;
+	overflow: hidden !important;
+	height: 0;
+}
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}

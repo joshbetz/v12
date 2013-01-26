@@ -1,0 +1,50 @@
+#comments {
+	margin-top: $padding*2;
+	h2 { margin-bottom: $padding; }
+}
+
+#respond {
+	@extend .node;
+	margin-top: $gutter;
+	@include breakpoint(large) {
+		margin-top: $gutter*2;
+	}
+}
+
+.commentlist {
+	li.comment, li.pingback {
+		list-style: none;
+		li.comment { margin-top: $padding; }
+	}
+	.children {
+		@include breakpoint(mid) {
+			margin-right: $padding*2 * -1;
+		}
+	}
+}
+
+.bypostauthor {
+	border-top: solid 5px $orange;
+}
+
+.comment {
+	position: relative;
+}
+
+.comment-author cite, .comment-meta {
+	position: absolute;
+	top: 10px;
+}
+
+.comment-author cite {
+	font-size: 1.3em;
+	left: 85px;
+}
+
+.comment-meta {
+	right: 10px;
+}
+
+.reply {
+	margin-top: $padding;
+}
