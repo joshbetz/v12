@@ -31,7 +31,12 @@
 			<div id="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></div>
 			<div id="site-description"><?php bloginfo('description'); ?></div>
 			<nav id="main-navigation">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '', 'fallback_cb' => 'wp_page_menu' ) ); ?>
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'primary',
+						'walker' => new v12_Walker_Nav_Menu
+					));
+				?>
 				<?php get_search_form(); ?>
 			</nav>
 		</header>

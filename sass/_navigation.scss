@@ -13,12 +13,8 @@
 	width: 260px;
 	z-index: 10000;
 	overflow: hidden;
-	.menu, li, #searchform {
-		list-style: none;
+	.menu, #searchform {
 		display: block;
-		@include breakpoint(large) {
-			display: inline-block;
-		}
 	}
 	a {
 		display: block;
@@ -26,6 +22,10 @@
 		font-size: 1.4em;
 		padding: $padding;
 		background: $bg1;
+		@include breakpoint(large) {
+			display: inline-block;
+			width: auto;
+		}
 	}
 	a:hover {
 		background: $hover;
