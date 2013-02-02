@@ -23,11 +23,25 @@
 		max-width: 100%;
 		height: auto !important;
 	}
+
+	.gist {
+		font-size: 12px;
+		line-height: 1.4;
+		border: solid 3px #eee;
+		pre { overflow: auto; }
+		.gist-data, .line { margin-bottom: 0; }
+		.gist-file {
+			.gist-syntax { font-family: "Inconsolata", "Monaco", monospace; }
+			.gist-meta { background: #efefef; }
+			.gist-data { background: #fdfdfd; }
+			.gist-data .line-numbers { background: transparent; }
+		}
+	}
 }
 
 .article-content, .comment-content {
 	margin-top: $padding*2;
-	line-height: 1.4em;
+	line-height: 1.7;
 }
 
 hr {
