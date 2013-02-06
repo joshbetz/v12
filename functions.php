@@ -12,7 +12,7 @@
  * @since v12 1.0
  */
 if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
+	$content_width = 754; /* pixels */
 
 if ( ! defined( 'v12_LEFT_NAV_ARROW' ) )
 	define( 'v12_LEFT_NAV_ARROW', '&larr;' );
